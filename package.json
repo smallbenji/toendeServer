@@ -1,0 +1,15 @@
+{
+  "name": "fastelavntoenne",
+  "version": "1.0.0",
+  "description": "Websocket training.",
+  "main": "./server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SmallBenji",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.7",
+    "ws": "^7.4.3"
+  }
+}
