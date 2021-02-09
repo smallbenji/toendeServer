@@ -1,23 +1,11 @@
-const express = require('express');
-const {
-    Server
-} = require('ws');
-
-
-const PORT = process.env.PORT || 3000;
-const INDEX = '/index.html';
-
-const server = express()
-    .use((req, res) => res.sendFile(INDEX, {
-        root: __dirname
-    }))
-    .listen(PORT, () => console.log(`Listening on ${PORT}`));
-
-const wss = new Server({ server });
+const WebSocket = require('ws');
 
 var toende = {
     "hp": 0
 }
+const wss = new WebSocket.Server({
+    port: 8080
+});
 let id = 1;
 
 players = [];
@@ -47,3 +35,10 @@ wss.on('connection', function connection(ws) {
         }
     });
 });
+
+
+
+function damage(id, damage, ws) {
+    toende.hp -= damage;
+    console.log(`ID: ${id} damaged the toende ${damage} HP Toende: ${toende.hp}`);
+}

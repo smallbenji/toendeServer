@@ -9,6 +9,7 @@
   "author": "SmallBenji",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "nodemon": "^2.0.7",
     "ws": "^7.4.3"
   }
